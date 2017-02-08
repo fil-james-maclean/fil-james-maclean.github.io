@@ -1980,6 +1980,12 @@ h6, .h6 {
   50% {
     transform: translate3d(150px, 0, 0); } }
 
+@keyframes rotateOnce {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
+
 @keyframes scaleUpDown {
   from, to {
     transform: scale3d(1, 1, 1); }
@@ -2015,6 +2021,9 @@ h6, .h6 {
 
 .assemblyDemo__motion {
   animation-name: moveHorizontal; }
+
+.assemblyDemo__rotate {
+  animation-name: rotateOnce; }
 
 .assemblyDemo__scale {
   animation-name: scaleUpDown; }
