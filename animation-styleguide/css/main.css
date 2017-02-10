@@ -2925,15 +2925,15 @@ body {
 
 .demoContainer {
   float: left;
-  width: 300px;
+  width: 220px;
   margin: 12px;
   text-align: center;
   background: #F7F7F7;
   border: 1px solid #BFBFBF; }
 
 .demo-box {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: auto; }
 
 .overlay {
