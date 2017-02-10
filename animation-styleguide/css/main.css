@@ -2926,7 +2926,10 @@ body {
 .demoContainer {
   float: left;
   width: 300px;
-  text-align: center; }
+  margin: 12px;
+  text-align: center;
+  background: #F7F7F7;
+  border: 1px solid #BFBFBF; }
 
 .demo-box {
   width: 120px;
