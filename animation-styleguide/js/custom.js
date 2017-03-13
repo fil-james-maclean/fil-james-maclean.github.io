@@ -41,6 +41,18 @@ $( document ).on( 'click', '.js-fadeInScaleDown-trigger', function( e ) {
 } );
 
 
+$( document ).on( 'click', '.js-pulseIn-trigger', function( e ) {
+
+    $( '.js-pulseIn-target' ).each( function() {
+
+         $( this ).toggleClass( 'delay-100 dur-300 pulseIn is-hidden' );
+
+    } );
+
+    e.preventDefault();
+
+} );
+
 
 $( document ).on( 'click', '.js-fadeInUp-trigger', function( e ) {
 
@@ -161,6 +173,17 @@ $( document ).on( 'click', '.js-fadeOutScaleUp-trigger', function( e ) {
 
 } );
 
+$( document ).on( 'click', '.js-pulseOut-trigger', function( e ) {
+
+    $( '.js-pulseOut-target' ).each( function() {
+
+         $( this ).toggleClass( 'delay-100 dur-500 pulseOut is-hidden' );
+
+    } );
+
+    e.preventDefault();
+
+} );
 
 $( document ).on( 'click', '.js-fadeOutUp-trigger', function( e ) {
 
@@ -408,7 +431,7 @@ $( document ).on( 'click', '.js-modal-execute-trigger', function( e ) {
 
 
 /* Toast example */
-var toastEnterClasses = "delay-100 dur-500 fadeInRight js-toast__is-open"
+var toastEnterClasses = "delay-100 dur-500 fadeInLeft js-toast__is-open"
 var toastExitClasses = "is-hidden delay-100 dur-200 fadeOut js-toast__is-closed"
 var toastEmphasisClasses = "dur-800 shake js-toast__is-open"
 /*
