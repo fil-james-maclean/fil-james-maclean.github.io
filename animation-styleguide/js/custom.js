@@ -563,21 +563,50 @@ $( document ).on( 'click', '.js-canvas-execute-trigger', function( e ) {
 
 
 $( document ).on( 'click', '.js-content-card-trigger', function( e ) {
-
+     var shadowNormal = $('.js-card-shadow-normal');
+     var shadowAnimating = $('.js-card-shadow-animating');
      $( '.js-content-card-target' ).each( function() {
 
          if ( $( this ).hasClass( 'card__flipped' ) ) {
-              $( this ).removeClass( 'delay-100 dur-500 flipLeft180 card__flipped' );
-              $( this ).addClass( 'delay-100 dur-500 flipRight180' );
+             flipShadow(shadowNormal, shadowAnimating, 600);
+              $( this ).removeClass( 'delay-100 dur-600 flipLeft180 card__flipped' );
+              $( this ).addClass( 'delay-100 dur-600 flipRight180' );
+
          } else {
-             $( this ).removeClass( 'delay-100 dur-500 flipRight180' );
-             $( this ).addClass( 'delay-100 dur-500 flipLeft180 card__flipped' );
+             flipShadow(shadowNormal, shadowAnimating, 600);
+             $( this ).removeClass( 'delay-100 dur-600 flipRight180' );
+             $( this ).addClass( 'delay-100 dur-600 flipLeft180 card__flipped' );
          }
      } );
+
+
+
 
      e.preventDefault();
 
 } );
+
+var flipShadowEnterClasses = "delay-200 dur-300 fadeIn"
+var flipShadowExitClasses = "dur-200 fadeOut"
+
+function flipShadow(normal, animating, duration) {
+
+    $(normal).removeClass(flipShadowEnterClasses);
+    $(animating).removeClass(flipShadowExitClasses);
+
+    $(normal).addClass(flipShadowExitClasses);
+    $(animating).addClass(flipShadowEnterClasses);
+
+    function endFlipShadow(){
+
+        $(normal).removeClass(flipShadowExitClasses);
+        $(animating).removeClass(flipShadowEnterClasses);
+        //
+        $(normal).addClass(flipShadowEnterClasses);
+        $(animating).addClass(flipShadowExitClasses);
+    }
+    setTimeout(endFlipShadow, (duration-(duration/6) ) );
+ }
 
 ;(function( $ ){
 
