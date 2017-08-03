@@ -1,0 +1,591 @@
+/**
+* variables
+* timings
+* easings
+* 3D
+* bases
+* entrance
+* exit
+* emphasis
+* execute
+*/
+
+/**
+* variables
+*/
+$animation-perspective: 1200px;
+$move-amount: 60px;
+
+/**
+* Animation Timings classes
+* Start with these, timings and deviate to fine tune.
+*/
+
+@for $i from 1 through 12 {
+
+    .delay-#{ $i * 100 } {
+        animation-delay: #{ $i * 100 }ms;
+    }
+    .dur-#{ $i * 100 } {
+        animation-duration: #{ $i * 100 }ms;
+    }
+
+}
+
+/**
+* Easings
+*
+*/
+
+$easein-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$easeout-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+//custom
+$easein-back:cubic-bezier(0.78,-0.21,0.84,0.78);
+$easeout-back:cubic-bezier(0.36, 0.51, 0.54, 1.16);
+
+/**
+* ====== 3D =======
+*/
+
+.container3d {
+    position: relative;
+    perspective: $animation-perspective;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.card--front,
+.card--back {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+}
+
+.card--back {
+    transform: rotateY( 180deg );
+
+}
+
+
+/**
+* ====== Bases =======
+*/
+
+.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/**
+* ====== Entrances =======
+*/
+
+// fadein
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+// fadein-scaleup
+@keyframes fadeInScaleUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, $move-amount, 0) scale(0.8, 0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInScaleUp {
+    animation-name: fadeInScaleUp;
+    animation-fill-mode: both;
+    animation-timing-function: $easeout-back;
+}
+
+@keyframes fadeInScaleDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -($move-amount*0.6), 0) scale(1.1, 1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInScaleDown {
+    animation-name: fadeInScaleDown;
+    animation-fill-mode: both;
+    animation-timing-function: $easeout-back;
+}
+
+//pulse-in
+
+@keyframes pulseIn {
+    from {
+        opacity: 0;
+        transform: scale3d(0.4, 0.4, 1);
+    }
+    65% {
+        opacity: 1;
+        transform: scale3d(1.4, 1.4, 1);
+    }
+    to {
+        // opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.pulseIn {
+    animation-name: pulseIn;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+// fadein-moveUp
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, $move-amount, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-fill-mode: both;
+    animation-timing-function: $easeout-back;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -$move-amount, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-fill-mode: both;
+    animation-timing-function: $easeout-back;
+}
+
+
+// fadein-moveleft
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(($move-amount*1.4), 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+    animation-fill-mode: both;
+    animation-timing-function: $easeout-back;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(-($move-amount*1.4), 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInRight {
+    animation-name: fadeInRight;
+    animation-fill-mode: both;
+    animation-timing-function: $easeout-back;
+}
+
+@keyframes flipUp90  {
+    from {
+        transform: perspective($animation-perspective) translateY( 40% ) rotateX( -90deg );
+        opacity: 0;
+    }
+
+
+    to {
+        transform: perspective($animation-perspective) translateY( 0 ) rotateX( 0deg );
+        opacity: 1;
+    }
+}
+
+.flipUp90 {
+    backface-visibility: hidden !important;
+    animation-name: flipUp90 ;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+
+@keyframes flipDown90  {
+    from {
+        transform: perspective($animation-perspective) translateY( -40% ) rotateX( 90deg );
+        opacity: 0;
+    }
+
+
+    to {
+        transform: perspective($animation-perspective) translateY( 0 ) rotateX( 0deg );
+        opacity: 1;
+    }
+}
+
+.flipDown90 {
+    backface-visibility: hidden !important;
+    animation-name: flipDown90 ;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    &.reverse {
+        animation-direction: reverse;
+    }
+}
+
+
+
+// Exits
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+
+@keyframes fadeOutScaleDown {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, $move-amount, 0) scale(0.8, 0.8);
+    }
+}
+
+.fadeOutScaleDown {
+    animation-name: fadeOutScaleDown;
+    animation-fill-mode: both;
+    animation-timing-function: $easein-back;
+}
+
+@keyframes fadeOutScaleUp {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, -$move-amount, 0) scale(1.1, 1.1);
+    }
+}
+
+.fadeOutScaleUp {
+    animation-name: fadeOutScaleUp;
+    animation-fill-mode: both;
+    animation-timing-function: $easein-back;
+}
+
+//pulse-out
+
+@keyframes pulseOut {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    35% {
+        opacity: 1;
+        transform: scale3d(1.4, 1.4, 1);
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(0.4, 0.4, 1);
+    }
+}
+
+.pulseOut {
+    animation-name: pulseOut;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, -$move-amount, 0);
+
+    }
+}
+
+.fadeOutUp {
+    animation-name: fadeOutUp;
+    animation-fill-mode: both;
+    animation-timing-function: $easein-back;
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, $move-amount, 0);
+
+    }
+}
+
+.fadeOutDown {
+    animation-name: fadeOutDown;
+    animation-fill-mode: both;
+    animation-timing-function: $easein-back;
+}
+
+
+@keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(-($move-amount*1.4), 0, 0);
+
+    }
+}
+
+.fadeOutLeft {
+    animation-name: fadeOutLeft;
+    animation-fill-mode: both;
+    animation-timing-function: $easein-back;
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(($move-amount*1.4), 0, 0);
+
+    }
+}
+
+.fadeOutRight {
+    animation-name: fadeOutRight;
+    animation-fill-mode: both;
+    animation-timing-function: $easein-back;
+}
+
+
+@keyframes flipOutUp90  {
+    from {
+
+        transform: perspective($animation-perspective) translateY( 0 ) rotateX( 0deg );
+        opacity: 1;
+    }
+
+    to {
+        transform: perspective($animation-perspective) translateY( -40% ) rotateX( 90deg );
+        opacity: 0;
+    }
+}
+
+.flipOutUp90 {
+    backface-visibility: hidden !important;
+    animation-name: flipOutUp90 ;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+
+@keyframes flipOutDown90  {
+    from {
+        transform: perspective($animation-perspective) translateY( 0 ) rotateX( 0deg );
+        opacity: 1;
+    }
+
+
+    to {
+        transform: perspective($animation-perspective) translateY( 40% ) rotateX( -90deg );
+        opacity: 0;
+    }
+}
+
+.flipOutDown90 {
+    backface-visibility: hidden !important;
+    animation-name: flipOutDown90 ;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+
+
+@keyframes flipLeft180  {
+    from {
+        transform: translateZ( 0 ) translateX( 0 ) rotateY( 0deg );
+    }
+
+    45% {
+        transform: translateZ( 50px ) translateX( 60% ) rotateY( -90deg );
+    }
+
+    to {
+        transform: translateZ( 0 ) translateX( 0 ) rotateY( -180deg );
+
+    }
+}
+
+
+.flipLeft180 {
+    animation-name: flipLeft180 ;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes flipRight180  {
+    from {
+        transform: translateZ( 0 ) translateX( 0 ) rotateY( -180deg );
+    }
+
+    60% {
+        transform: translateZ( 50px ) translateX( -30% ) rotateY( -90deg );
+    }
+
+    to {
+        transform: translateZ( 0 ) translateX( 0 ) rotateY( 0deg );
+
+    }
+}
+
+.flipRight180 {
+    animation-name: flipRight180 ;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+
+
+/**
+* Enphasis
+*/
+
+@keyframes PulseScale {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    25% {
+        transform: scale3d(0.8, 0.8, 0.8);
+    }
+
+    50% {
+        transform: scale3d(1.15, 1.15, 1.15);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.PulseScale {
+    animation-name: PulseScale;
+    animation-fill-mode: both;
+}
+
+
+@keyframes shake {
+    from, to {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+.shake {
+    animation-name: shake;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+
+.Spotlight {
+    z-index: 50;
+    position: relative;
+    box-shadow: 0px 4px 40px 0px rgba(0,0,0,0.2);
+}
