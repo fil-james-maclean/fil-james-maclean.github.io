@@ -2239,30 +2239,23 @@ p, .p {
   /* [1] */ }
 
 /**
- * @extended as a default into animations
- */
-.anim-fill-both {
-  animation-fill-mode: both; }
-
+* variables
+* timings
+* easings
+* 3D
+* bases
+* entrance
+* exit
+* emphasis
+* execute
+*/
 /**
- * timings
- * easings
- * bases
- * entrance
- * exit
- * emphasis
- * execute
- */
+* variables
+*/
 /**
- * Animation Timings classes
- * Start with these, timings and deviate to fine tune.
- */
-/**
-  * Minimal set of 8 should cover most UI animations
-  */
-/**
- * Extended set for fine tuning and bespoke animations.
- */
+* Animation Timings classes
+* Start with these, timings and deviate to fine tune.
+*/
 .delay-100 {
   animation-delay: 100ms; }
 
@@ -2335,194 +2328,46 @@ p, .p {
 .dur-1200 {
   animation-duration: 1200ms; }
 
-.delay-1300 {
-  animation-delay: 1300ms; }
+/**
+* Easings
+*
+*/
+/**
+* ====== 3D =======
+*/
+.container3d {
+  position: relative;
+  perspective: 1200px; }
 
-.dur-1300 {
-  animation-duration: 1300ms; }
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d; }
 
-.delay-1400 {
-  animation-delay: 1400ms; }
+.card--front,
+.card--back {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
 
-.dur-1400 {
-  animation-duration: 1400ms; }
-
-.delay-1500 {
-  animation-delay: 1500ms; }
-
-.dur-1500 {
-  animation-duration: 1500ms; }
-
-.delay-1600 {
-  animation-delay: 1600ms; }
-
-.dur-1600 {
-  animation-duration: 1600ms; }
-
-.delay-1700 {
-  animation-delay: 1700ms; }
-
-.dur-1700 {
-  animation-duration: 1700ms; }
-
-.delay-1800 {
-  animation-delay: 1800ms; }
-
-.dur-1800 {
-  animation-duration: 1800ms; }
-
-.delay-1900 {
-  animation-delay: 1900ms; }
-
-.dur-1900 {
-  animation-duration: 1900ms; }
-
-.delay-2000 {
-  animation-delay: 2000ms; }
-
-.dur-2000 {
-  animation-duration: 2000ms; }
-
-.delay-2100 {
-  animation-delay: 2100ms; }
-
-.dur-2100 {
-  animation-duration: 2100ms; }
-
-.delay-2200 {
-  animation-delay: 2200ms; }
-
-.dur-2200 {
-  animation-duration: 2200ms; }
-
-.delay-2300 {
-  animation-delay: 2300ms; }
-
-.dur-2300 {
-  animation-duration: 2300ms; }
-
-.delay-2400 {
-  animation-delay: 2400ms; }
-
-.dur-2400 {
-  animation-duration: 2400ms; }
-
-.delay-2500 {
-  animation-delay: 2500ms; }
-
-.dur-2500 {
-  animation-duration: 2500ms; }
-
-.delay-2600 {
-  animation-delay: 2600ms; }
-
-.dur-2600 {
-  animation-duration: 2600ms; }
-
-.delay-2700 {
-  animation-delay: 2700ms; }
-
-.dur-2700 {
-  animation-duration: 2700ms; }
-
-.delay-2800 {
-  animation-delay: 2800ms; }
-
-.dur-2800 {
-  animation-duration: 2800ms; }
-
-.delay-2900 {
-  animation-delay: 2900ms; }
-
-.dur-2900 {
-  animation-duration: 2900ms; }
-
-.delay-3000 {
-  animation-delay: 3000ms; }
-
-.dur-3000 {
-  animation-duration: 3000ms; }
-
-.delay-3100 {
-  animation-delay: 3100ms; }
-
-.dur-3100 {
-  animation-duration: 3100ms; }
-
-.delay-3200 {
-  animation-delay: 3200ms; }
-
-.dur-3200 {
-  animation-duration: 3200ms; }
-
-.delay-3300 {
-  animation-delay: 3300ms; }
-
-.dur-3300 {
-  animation-duration: 3300ms; }
-
-.delay-3400 {
-  animation-delay: 3400ms; }
-
-.dur-3400 {
-  animation-duration: 3400ms; }
-
-.delay-3500 {
-  animation-delay: 3500ms; }
-
-.dur-3500 {
-  animation-duration: 3500ms; }
-
-.delay-3600 {
-  animation-delay: 3600ms; }
-
-.dur-3600 {
-  animation-duration: 3600ms; }
-
-.delay-3700 {
-  animation-delay: 3700ms; }
-
-.dur-3700 {
-  animation-duration: 3700ms; }
-
-.delay-3800 {
-  animation-delay: 3800ms; }
-
-.dur-3800 {
-  animation-duration: 3800ms; }
-
-.delay-3900 {
-  animation-delay: 3900ms; }
-
-.dur-3900 {
-  animation-duration: 3900ms; }
-
-.delay-4000 {
-  animation-delay: 4000ms; }
-
-.dur-4000 {
-  animation-duration: 4000ms; }
+.card--back {
+  transform: rotateY(180deg); }
 
 /**
- * Easings
- *
- */
-.entrance {
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-.exit {
-  animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
-
-.emphasis {
-  animation-timing-function: cubic-bezier(0.36, 0.51, 0.54, 1.16); }
-
-.execute {
-  animation-timing-function: cubic-bezier(0.78, -0.21, 0.84, 0.78); }
-
+* ====== Bases =======
+*/
 .is-hidden {
   opacity: 0;
   pointer-events: none; }
 
+/**
+* ====== Entrances =======
+*/
 @keyframes fadeIn {
   from {
     opacity: 0; }
@@ -2537,7 +2382,7 @@ p, .p {
 @keyframes fadeInScaleUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 20%, 0) scale(0.8, 0.8); }
+    transform: translate3d(0, 60px, 0) scale(0.8, 0.8); }
   to {
     opacity: 1;
     transform: none; } }
@@ -2550,7 +2395,7 @@ p, .p {
 @keyframes fadeInScaleDown {
   from {
     opacity: 0;
-    transform: translate3d(0, -10%, 0) scale(1.1, 1.1); }
+    transform: translate3d(0, -36px, 0) scale(1.1, 1.1); }
   to {
     opacity: 1;
     transform: none; } }
@@ -2578,7 +2423,7 @@ p, .p {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 20%, 0); }
+    transform: translate3d(0, 60px, 0); }
   to {
     opacity: 1;
     transform: none; } }
@@ -2591,7 +2436,7 @@ p, .p {
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translate3d(0, -20%, 0); }
+    transform: translate3d(0, -60px, 0); }
   to {
     opacity: 1;
     transform: none; } }
@@ -2604,7 +2449,7 @@ p, .p {
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translate3d(30%, 0, 0); }
+    transform: translate3d(84px, 0, 0); }
   to {
     opacity: 1;
     transform: none; } }
@@ -2617,7 +2462,7 @@ p, .p {
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translate3d(-30%, 0, 0); }
+    transform: translate3d(-84px, 0, 0); }
   to {
     opacity: 1;
     transform: none; } }
@@ -2635,9 +2480,6 @@ p, .p {
     transform: perspective(1200px) translateY(0) rotateX(0deg);
     opacity: 1; } }
 
-.parent-perspective {
-  perspective: 1200px; }
-
 .flipUp90 {
   -webkit-backface-visibility: hidden !important;
   backface-visibility: hidden !important;
@@ -2652,9 +2494,6 @@ p, .p {
   to {
     transform: perspective(1200px) translateY(0) rotateX(0deg);
     opacity: 1; } }
-
-.parent-perspective {
-  perspective: 1200px; }
 
 .flipDown90 {
   -webkit-backface-visibility: hidden !important;
@@ -2682,7 +2521,7 @@ p, .p {
     transform: none; }
   to {
     opacity: 0;
-    transform: translate3d(0, 20%, 0) scale(0.8, 0.8); } }
+    transform: translate3d(0, 60px, 0) scale(0.8, 0.8); } }
 
 .fadeOutScaleDown {
   animation-name: fadeOutScaleDown;
@@ -2695,7 +2534,7 @@ p, .p {
     transform: none; }
   to {
     opacity: 0;
-    transform: translate3d(0, -20%, 0) scale(1.1, 1.1); } }
+    transform: translate3d(0, -60px, 0) scale(1.1, 1.1); } }
 
 .fadeOutScaleUp {
   animation-name: fadeOutScaleUp;
@@ -2724,7 +2563,7 @@ p, .p {
     transform: none; }
   to {
     opacity: 0;
-    transform: translate3d(0, -20%, 0); } }
+    transform: translate3d(0, -60px, 0); } }
 
 .fadeOutUp {
   animation-name: fadeOutUp;
@@ -2737,7 +2576,7 @@ p, .p {
     transform: none; }
   to {
     opacity: 0;
-    transform: translate3d(0, 20%, 0); } }
+    transform: translate3d(0, 60px, 0); } }
 
 .fadeOutDown {
   animation-name: fadeOutDown;
@@ -2750,7 +2589,7 @@ p, .p {
     transform: none; }
   to {
     opacity: 0;
-    transform: translate3d(-30%, 0, 0); } }
+    transform: translate3d(-84px, 0, 0); } }
 
 .fadeOutLeft {
   animation-name: fadeOutLeft;
@@ -2763,7 +2602,7 @@ p, .p {
     transform: none; }
   to {
     opacity: 0;
-    transform: translate3d(30%, 0, 0); } }
+    transform: translate3d(84px, 0, 0); } }
 
 .fadeOutRight {
   animation-name: fadeOutRight;
@@ -2793,41 +2632,12 @@ p, .p {
     transform: perspective(1200px) translateY(40%) rotateX(-90deg);
     opacity: 0; } }
 
-.parent-perspective {
-  perspective: 1200px; }
-
 .flipOutDown90 {
   -webkit-backface-visibility: hidden !important;
   backface-visibility: hidden !important;
   animation-name: flipOutDown90;
   animation-timing-function: ease;
   animation-fill-mode: both; }
-
-/**
-* ====== Card flip Execute =======
-*/
-.container3d {
-  position: relative;
-  perspective: 1200px; }
-
-.card {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d; }
-
-.card--front,
-.card--back {
-  margin: 0;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
-
-.card--back {
-  transform: rotateY(180deg); }
 
 @keyframes flipLeft180 {
   from {
@@ -2836,9 +2646,6 @@ p, .p {
     transform: translateZ(50px) translateX(60%) rotateY(-90deg); }
   to {
     transform: translateZ(0) translateX(0) rotateY(-180deg); } }
-
-.parent-perspective {
-  perspective: 1200px; }
 
 .flipLeft180 {
   animation-name: flipLeft180;
@@ -2873,63 +2680,6 @@ p, .p {
 
 .PulseScale {
   animation-name: PulseScale;
-  animation-fill-mode: both; }
-
-@keyframes PulseOutline {
-  from {
-    transform: scale3d(1, 1, 1);
-    animation-timing-function: ease-out; }
-  50% {
-    transform: scale3d(0.8, 0.8, 0.8); }
-  55% {
-    transform: scale3d(1, 1, 1); }
-  60% {
-    transform: scale3d(1, 1, 1);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: #666666;
-    outline-offset: 6px;
-    animation-timing-function: step-start; }
-  65% {
-    transform: scale3d(1, 1, 1);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: #666666;
-    outline-offset: 12px; }
-  70% {
-    transform: scale3d(1, 1, 1);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: #666666;
-    outline-offset: 24px; }
-  75% {
-    transform: scale3d(1, 1, 1);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: #666666;
-    outline-offset: 32px; }
-  80% {
-    transform: scale3d(1, 1, 1);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: #666666;
-    outline-offset: 26px; }
-  90% {
-    transform: scale3d(1, 1, 1);
-    outline-width: 2px;
-    outline-style: solid;
-    outline-color: #666666;
-    outline-offset: 8px; }
-  to {
-    transform: scale3d(1, 1, 1);
-    outline-width: 0px;
-    outline-style: none;
-    outline-color: #666666;
-    outline-offset: 0px;
-    animation-timing-function: step-end; } }
-
-.PulseOutline {
-  animation-name: PulseOutline;
   animation-fill-mode: both; }
 
 @keyframes shake {

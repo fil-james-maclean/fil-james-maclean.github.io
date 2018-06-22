@@ -1,0 +1,96 @@
+<!doctype html>
+	<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+	<!--[if IE 7]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+	<!--[if IE 8]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+	<!--[if IE 9]><html class="no-js ie9 oldie" lang="en"><![endif]-->
+	<!--[if IE 10]><html class="no-js ie10 oldie" lang="en"><![endif]-->
+	<!--[if gt IE 10]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Template Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="css/main.css" >
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<html>
+<body>
+
+<h1 class="gutted">Animation styleguide</h1>
+
+
+<div class="gutted">
+<h3 class="rhythm-m-1">Small size loader</h3>
+
+   <h5 class="rhythmic-m">Inside a form field</h5>
+   <span>Lable for input</span>
+   <div class="demo-loading-form">
+      <span>Check this input</span>
+      <div class="loadingSpinner  loadingSpinner--small"></div>
+   </div>
+
+   <h5 class="rhythmic-m">Inside a button</h5>
+   <div class="rhythmic-m">
+      <div class="loading-btn btn btn-tertiary btn--small  js-loading-btn-toggle">
+         <span class="loading-btn--text">Load lots of stuff</span>
+         <div class="loading-btn--spinner loadingSpinner  loadingSpinner--small"></div>
+      </div>
+   </div>
+
+   <h3 class="rhythm-m-1">Medium size loader</h3>
+
+   <div class="loading-btn-medium btn btn-tertiary btn--medium  js-loading-btn-medium-toggle">
+      <span class="loading-btn-medium--text">Load lots of stuff</span>
+      <div class="loading-btn-medium--mask">
+         <span class="loading-btn-medium--loadingtext">Loading...</span>
+         <div class="loading-btn-medium--spinner loadingSpinner  loadingSpinner--medium"></div>
+         <span class="loading-btn-medium--donetext">Done <span class="icon-circle-tick icon--small"></span></span>
+      </div>
+   </div>
+
+</div>
+
+<div class="gutted rhythmic-xl">
+   <h3 class="rhythm-m-1">Large size loader</h3>
+   <div class="rhythmic gutted loading-card">
+      <h4 class="rhythm-m-1">This card</h4>
+      <p class="rhythm-m-1">Has some data that needs to load.</p>
+      <span class="currency">£-,---,---.--</span>
+      <div class="loading-card--overlay overlay__light js-loading-card-target-overlay is-hidden">
+         <div class="loadingSpinner--container js-loading-card-target-loader">
+           <div class="loadingSpinner  loadingSpinner--large"></div>
+         </div>
+      </div>
+   </div>
+         <div class="rhythmic-m btn btn-tertiary js-loading-card-toggle">load the data</div>
+</div>
+
+<div class="gutted">
+
+   <h2 class="rhythm-m-1">xLarge size Loader</h2>
+   <p>Uesful for loading a larger area.</p>
+   <div class="demo-loadingbox bg-white">
+       <div class="loadingSpinner  loadingSpinner--xlarge"></div>
+   </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Javascript -->
+
+<script type="text/javascript" src="js/vendor.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</html>

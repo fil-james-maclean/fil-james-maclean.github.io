@@ -341,8 +341,8 @@ $( document ).on( 'click', '.js-Spotlight-trigger', function( e ) {
 
 /* Modal Animations */
 
-var findModal = $( '.js-modal-target' );
-var findOverlay = $( '.js-overlay-target' );
+var $modal = $( '.js-modal-target' );
+var $overlay = $( '.js-overlay-target' );
 
 var modalEnterClasses = "delay-100 dur-500 fadeInScaleUp js-modal__is-open"
 var modalExitClasses = "is-hidden delay-100 dur-400 fadeOutScaleDown js-modal__is-closed"
@@ -374,12 +374,12 @@ function enableButton( $sel ) {
 Function to control the entrance animation of the modal
 */
 function enterModal() {
-    $( '.js-modal-target' ).removeClass(modalExitClasses);
-    $( '.js-modal-target' ).removeClass(modalExecuteClasses);
-    $( '.js-modal-target' ).addClass(modalEnterClasses);
+    $modal.removeClass(modalExitClasses);
+    $modal.removeClass(modalExecuteClasses);
+    $modal.addClass(modalEnterClasses);
 
-    $( '.js-overlay-target' ).removeClass(overlayExitClasses);
-    $( '.js-overlay-target' ).addClass(overlayEnterClasses);
+    $overlay.removeClass(overlayExitClasses);
+    $overlay.addClass(overlayEnterClasses);
 
     clearButtonState();
     disableButton( '.js-enter-button' );
@@ -389,11 +389,11 @@ function enterModal() {
 Function to control the exit animation of the modal
 */
 function exitModal() {
-    $( '.js-modal-target' ).removeClass(modalEnterClasses);
-    $( '.js-modal-target' ).addClass(modalExitClasses);
+    $modal.removeClass(modalEnterClasses);
+    $modal.addClass(modalExitClasses);
 
-    $( '.js-overlay-target' ).removeClass(overlayEnterClasses);
-    $( '.js-overlay-target' ).addClass(overlayExitClasses);
+    $overlay.removeClass(overlayEnterClasses);
+    $overlay.addClass(overlayExitClasses);
 
     clearButtonState();
     disableButton( '.js-exit-button, .js-execute-button' );
@@ -403,11 +403,11 @@ function exitModal() {
 Function to control the execution animation of the modal
 */
 function executeModal() {
-    $( '.js-modal-target' ).removeClass(modalEnterClasses);
-    $( '.js-modal-target' ).addClass(modalExecuteClasses);
+    $modal.removeClass(modalEnterClasses);
+    $modal.addClass(modalExecuteClasses);
 
-    $( '.js-overlay-target' ).removeClass(overlayEnterClasses);
-    $( '.js-overlay-target' ).addClass(overlayExitClasses);
+    $overlay.removeClass(overlayEnterClasses);
+    $overlay.addClass(overlayExitClasses);
 
     clearButtonState();
     disableButton( '.js-exit-button, .js-execute-button' );
@@ -415,17 +415,17 @@ function executeModal() {
 
 /* button handlers */
 $( document ).on( 'click', '.js-modal-enter-trigger', function( event ) {
-    $( '.js-modal-target' ).hasClass('js-modal__is-closed') ? enterModal() : false;
+    $modal.hasClass('js-modal__is-closed') ? enterModal() : false;
     event.preventDefault();
 } );
 
 $( document ).on( 'click', '.js-modal-exit-trigger', function( event ) {
-    $( '.js-modal-target' ).hasClass('js-modal__is-open') ? exitModal() : false;
+    $modal.hasClass('js-modal__is-open') ? exitModal() : false;
     event.preventDefault();
 } );
 
 $( document ).on( 'click', '.js-modal-execute-trigger', function( e ) {
-     $( '.js-modal-target' ).hasClass('js-modal__is-open') ? executeModal() : false;
+     $modal.hasClass('js-modal__is-open') ? executeModal() : false;
      e.preventDefault();
 } );
 
